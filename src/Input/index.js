@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
+import useStore from '../useStore'
 
 function Input() {
-  const [input, setInput] = useState(1)
+  const [{ input }, dispatch] = useStore()
 
   function handleInputChange(e) {
-    setInput(e.target.value)
+    dispatch({ type: 'input', value: e.target.value })
   }
 
   return (
