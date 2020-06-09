@@ -2,7 +2,7 @@ import React from 'react'
 import useStore from '../useStore'
 
 function Input() {
-  const [{ input }, dispatch] = useStore()
+  const { state, dispatch } = useStore()
 
   function handleInputChange(e) {
     dispatch({ type: 'input', value: e.target.value })
@@ -11,7 +11,7 @@ function Input() {
   return (
     <input
       type="number"
-      value={input}
+      value={state.input}
       onChange={handleInputChange}
       min={0}
     />

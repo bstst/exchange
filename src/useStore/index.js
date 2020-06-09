@@ -19,7 +19,7 @@ function reducer(state, action) {
 function useStore() {
   const [state, dispatch] = useReducer(reducer, initialState)
   window.state = state // debug helper
-  return [state, dispatch]
+  return { state, dispatch }
 }
 
 export default useStore
