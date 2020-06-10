@@ -5,7 +5,8 @@ function formatCurrency(number) {
     return ''
   }
 
-  const fixed = number.toFixed(2)
+  const isNegative = number < 0
+  const fixed = String(Math.abs(number.toFixed(2)))
   const [before, after] = fixed.split('.')
   const beforeArray = before.split('')
   const groups = []
@@ -17,7 +18,7 @@ function formatCurrency(number) {
 
   groups.reverse()
   const reconstructed = groups.map(group => group.join('')).join(',')
-  const result = `${reconstructed}.${after}`
+  const result = `${isNegative ? '-' : ''}${reconstructed}.${after}`
   return result
 }
 
