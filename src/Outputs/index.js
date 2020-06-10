@@ -18,7 +18,7 @@ function Outputs() {
       }
 
       return (
-        <div>
+        <div key={code}>
           <input
             type="text"
             value={`${decodeEntities(symbol)} ${formatCurrency(value)}`}
