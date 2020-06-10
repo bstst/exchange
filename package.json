@@ -7,13 +7,17 @@
     "react-dom": "^16.12.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "cypress": "cypress run",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-scripts": "latest"
+    "cypress": "^4.8.0",
+    "react-scripts": "latest",
+    "start-server-and-test": "^1.11.0"
   },
   "browserslist": {
     "production": [
