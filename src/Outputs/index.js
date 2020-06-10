@@ -27,7 +27,7 @@ function Outputs() {
           <button
             onClick={handleRemoveClick}
           >
-            Remove
+            &times;
           </button>
         </div>
       )
