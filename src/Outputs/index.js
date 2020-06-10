@@ -2,6 +2,8 @@ import React from 'react'
 
 import useStore from '../Store/useStore'
 import decodeEntities from '../Utils/decodeEntities'
+import formatCurrency from '../Utils/formatCurrency'
+import isNumber from '../Utils/isNumber'
 
 function Outputs() {
   const { state, dispatch } = useStore()
@@ -9,8 +11,7 @@ function Outputs() {
     .map(code => {
       const input = parseFloat(state.input)
       const { rate_float, symbol } = state.data.bpi[code]
-      const isNumber = Number.isFinite(parseFloat(input))
-      const value = isNumber ? input * rate_float : ''
+      const value = isNumber(input) ? input * rate_float : ''
 
       function handleRemoveClick() {
         dispatch({ type: 'remove', payload: code })
@@ -20,7 +21,7 @@ function Outputs() {
         <div>
           <input
             type="text"
-            value={`${decodeEntities(symbol)} ${value}`}
+            value={`${decodeEntities(symbol)} ${formatCurrency(value)}`}
             readOnly={true}
           />
           <button
