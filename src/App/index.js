@@ -21,8 +21,8 @@ function App() {
 
   return (
     <div>
-      <Input />
-      <Add />
+      <Input /> BTC
+      to <Add />
       <Outputs />
     </div>
   )
