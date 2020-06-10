@@ -19,6 +19,7 @@ function Outputs() {
       return (
         <div>
           <input
+            type="text"
             value={`${decodeEntities(symbol)} ${value}`}
             readOnly={true}
           />
