@@ -1,5 +1,7 @@
 import React from 'react'
+
 import useStore from '../useStore'
+import decodeEntities from '../Utils/decodeEntities'
 
 function Outputs() {
   const { state } = useStore()
@@ -11,7 +13,7 @@ function Outputs() {
       return (
         <div>
           <input
-            value={`${symbol} ${value}`}
+            value={`${decodeEntities(symbol)} ${value}`}
             readOnly={true}
           />
         </div>
