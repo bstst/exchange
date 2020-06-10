@@ -5,7 +5,7 @@ function Input() {
   const { state, dispatch } = useStore()
 
   function handleInputChange(e) {
-    dispatch({ type: 'input', value: e.target.value })
+    dispatch({ type: 'input', payload: e.target.value })
   }
 
   return (
