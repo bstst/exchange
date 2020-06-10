@@ -23,6 +23,11 @@ function reducer(state, action) {
         ...state,
         outputs: [ ...state.outputs, action.payload ],
       }
+    case 'remove':
+      return {
+        ...state,
+        outputs: [...state.outputs.filter(item => item !== action.payload)],
+      }
     default:
       throw new Error()
   }

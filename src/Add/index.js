@@ -28,14 +28,14 @@ function Add() {
   }
 
   return (
-    <div>
+    <>
       <button
         onClick={handleAddClick}
       >
         Add
       </button>
       <select ref={select}>{options}</select>
-    </div>
+    </>
   )
 }
 
