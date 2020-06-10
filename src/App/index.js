@@ -6,18 +6,26 @@ import Add from '../Add'
 import Outputs from '../Outputs'
 
 function App() {
-  const { state, dispatch } = useStore()
-
-  function handleData(data) {
-    dispatch({ type: 'data', payload: data })
-  }
+  const { dispatch } = useStore()
 
   useEffect(() => {
-    fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(res => res.json())
-      .then(handleData)
-      .catch(err => console.log(err))
-  }, [])
+    function handleData(data) {
+      dispatch({ type: 'data', payload: data })
+    }
+
+    function getData() {
+      fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then(res => res.json())
+        .then(handleData)
+        .catch(err => console.log(err))
+    }
+
+    getData()
+    const interval = setInterval(getData, 60 * 1000)
+    return () => {
+      clearInterval(interval)
+    }
+  }, [dispatch])
 
   return (
     <div>

@@ -6,7 +6,7 @@ function formatCurrency(number) {
   }
 
   const isNegative = number < 0
-  const fixed = String(Math.abs(number.toFixed(2)))
+  const fixed = String(Math.abs(number).toFixed(2))
   const [before, after] = fixed.split('.')
   const beforeArray = before.split('')
   const groups = []
