@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useStore from '../useStore'
+import useStore from '../Store/useStore'
 import decodeEntities from '../Utils/decodeEntities'
 
 function Outputs() {

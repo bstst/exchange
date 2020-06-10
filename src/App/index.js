@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import useStore from '../useStore'
+import useStore from '../Store/useStore'
 import Input from '../Input'
 import Add from '../Add'
 import Outputs from '../Outputs'

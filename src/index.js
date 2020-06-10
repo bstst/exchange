@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import { Provider } from './useStore'
+import { Provider } from './Store/useStore'
 import App from './App'
 import './style.css'
 
