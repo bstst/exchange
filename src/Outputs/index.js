@@ -9,7 +9,8 @@ function Outputs() {
     .map(code => {
       const input = parseFloat(state.input)
       const { rate_float, symbol } = state.data.bpi[code]
-      const value = input * rate_float
+      const isNumber = Number.isFinite(parseFloat(input))
+      const value = isNumber ? input * rate_float : ''
       return (
         <div>
           <input
