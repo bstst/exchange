@@ -14,6 +14,7 @@ function Input() {
       value={state.input}
       onChange={handleInputChange}
       min={0}
+      step={0.1}
     />
   )
 }
