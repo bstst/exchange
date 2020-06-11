@@ -1,9 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
+import 'water.css/dist/light-legacy.standalone.css'
 
 import { Provider } from './Store/useStore'
 import App from './App'
-import './style.css'
+import './style.scss'
 
 render((
   <Provider>
